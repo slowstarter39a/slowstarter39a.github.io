@@ -1,7 +1,7 @@
 ---
 layout  : single
 title   : wiki
-last_modified_at : 2021-03-30 18:49:39 +0900
+last_modified_at : 2021-08-02 00:37:09 +0900
 tags    : index
 toc     : true
 public  : true
@@ -25,8 +25,10 @@ permalink : /wiki/
 * [Debugging with GDB TUI mode]({% post_url 2020-03-21-gdb_tui_command %})
 * [How to use eclipse cdt as front end of arm gdb]({% post_url 2020-03-21-arm_gdb_eclipse %})
 
+<!--
 # qemu
 * [How to use qemu]({% post_url 2020-03-21-qemu %})
+* -->
 
 # C/C++
 * [c++ template]({% post_url 2020-03-25-cpp_template %})
