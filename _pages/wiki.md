@@ -1,7 +1,7 @@
 ---
 layout  : single
 title   : wiki
-last_modified_at : 2021-08-02 00:44:33 +0900
+last_modified_at : 2021-09-11 17:10:42 +0900
 tags    : index
 toc     : true
 public  : true
@@ -48,3 +48,6 @@ permalink : /wiki/
 # Linux tips
 * [How to create files with random data]({% post_url 2021-03-01-how_to_create_files_with_random_data %})
 * [Split compression/decompression]({% post_url 2021-02-28-split_compression_decompression %})
+ 
+# git
+* [basic git commands]({% post_url 2017-08-06-git %})
