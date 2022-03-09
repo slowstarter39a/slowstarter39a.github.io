@@ -1,7 +1,7 @@
 ---
 layout  : single
 title   : wiki
-last_modified_at : 2021-09-11 17:10:42 +0900
+last_modified_at : 2022-03-09 22:27:19 +0900
 tags    : index
 toc     : true
 public  : true
@@ -51,3 +51,6 @@ permalink : /wiki/
  
 # git
 * [basic git commands]({% post_url 2017-08-06-git %})
+
+# yocto
+* [Enabling GDB TUI mode on yocto project]({% post_url 2022-03-09-yocto-gdb-tui-enable %})
