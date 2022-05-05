@@ -2,7 +2,7 @@
 layout: single
 title: \[Yocto\] Enabling GDB TUI mode
 date : 2022-03-09 01:23:45 +0900
-last_modified_at: 2022-03-09 22:24:34 +0900
+last_modified_at: 2022-05-05 19:28:22 +0900
 categories: [gdb]
 tags: [yocto gdb]
 comments: true
@@ -47,3 +47,35 @@ PACKAGECONFIG:append = " tui "
 
 For "gdb-cross-architecture", refer to the link below to build and use.
 [debugging with gdb on yocto project](https://docs.yoctoproject.org/singleindex.html#debugging-with-the-gnu-project-debugger-gdb-remotely)
+
+# How to add gdb/strace to image
+ add 'tools-debug' image feature, which corresponds to the 'packagegroup-core-tools-debug' package group to local.conf.
+```
+...
+IMAGE_FEATURES:append = " tools-debug"
+...
+```
+     
+## The relevant information is in the files below.
+      
+In meta/classes/core-image.bbclass      
+```    
+...
+FEATURE_PACKAGES_tools-debug = "packagegroup-core-tools-debug"
+...
+```
+
+In meta/recipes-core/packagegroups/packagegroup-core-tools-debug.bb
+```
+...
+STRACE = "strace"
+STRACE:riscv32 = ""
+
+RDEPENDS:${PN} = "\
+    gdb \
+    gdbserver \
+    ${MTRACE} \
+    ${STRACE} \
+    "
+...
+```
