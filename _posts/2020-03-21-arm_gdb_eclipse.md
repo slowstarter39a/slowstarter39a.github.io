@@ -2,7 +2,7 @@
 layout: single
 title: How to use eclipse cdt as front end of arm gdb
 date : 2020-01-15 01:33:04 +0900
-last_modified_at: 2020-06-08 18:06:38 +0900
+last_modified_at: 2022-08-20 15:26:35 +0900
 categories: [gdb]
 tags: [qemu, eclipse cdt, gdb]
 comments: true
@@ -17,30 +17,14 @@ parent : vim
 # Using elipse cdt(C/C++ development Tooling) as the front end of arm gdb
  gdb has a lot of features, but it is a command line interface, so it takes time to become proficient. Using TUI mode is a little more convenient, but it is still inconvenient than GUI interface. Here I will explain how to use eclipse cdt as the front end of arm gdb.
 ## Install eclipse cdt
-  eclipse standalone debugger can be installed with a "Full eclipse" or "standalone", and you can choose either way.
-* Install "Full eclipse"
-  1. Downloads "eclipse C/C++ IDE" and decompress it.
-    * [https://www.eclipse.org/downloads/](https://www.eclipse.org/downloads/)
-  2. After decompression, move to the path below.
-    ```bash
-    $ cd eclipse/plugins/org.eclipse.cdt.debug.application_*/scripts
-    ```
-  3. The following command creates cdtdebug.sh in $HOME/cdtdebugger directory.
-    ```bash
-    $ /bin/sh .install.sh
-    ```
-  4. Run the command below.
-    ```bash
-    $ $HOME/cdtdebugger/cdtdebug.sh
-    ```
-
-* Install "standalone"
-  1. Download "standalone debugger" and decompress it.
-    * [ https://eclipse.org/cdt/downloads.php](https://eclipse.org/cdt/downloads.php)
-  2. After decompression, run the command below.
-    ```bash
-    $ ./cdtdebug
-    ```
+  1. Downloads "eclipse C/C++ IDE" and decompress/install it.  
+    - [https://www.eclipse.org/cdt/downloads.php](https://www.eclipse.org/cdt/downloads.php)
+  2. Launch "eclipse C/C++ IDE"
+  3. In menu, __help__ -> __Install New Software...__ -> click __Add...__ and input like below.  
+    - ex) if you are installing cdt 10.7
+      * __Name:__ cdt10.7
+      * __Location:__ https://download.eclipse.org/tools/cdt/releases/10.7
+  4. click __Select All__ and click __Next>__ -> ... -> __Finish__
 
 <br />
 ## Debugging helloworld with cdt
