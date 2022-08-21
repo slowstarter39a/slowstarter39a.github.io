@@ -1,7 +1,7 @@
 ---
 layout  : single
 title   : wiki
-last_modified_at : 2022-06-12 15:09:27 +0900
+last_modified_at : 2022-08-21 23:10:03 +0900
 tags    : index
 toc     : true
 public  : true
@@ -54,6 +54,9 @@ permalink : /wiki/
 
 # yocto
 * [Enabling GDB TUI mode on yocto project]({% post_url 2022-03-09-yocto-gdb-tui-enable %})
+* [\[Yocto\] QEMU kernel debugging with GDB]({% post_url 2022-08-20-yocto_qemu_kernel_gdb_debugging %})
+* 
+* 2022-08-20-yocto_qemu_kernel_gdb_debugging.md
 
 # RDP
 * [RDP over ssh tunnel]({% post_url 2022-06-12-rdp_over_ssh_tunnel %})
