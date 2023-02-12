@@ -1,7 +1,7 @@
 ---
 layout  : single
 title   : wiki
-last_modified_at : 2022-08-21 23:10:03 +0900
+last_modified_at : 2023-02-12 23:03:21 +0900
 tags    : index
 toc     : true
 public  : true
@@ -60,3 +60,6 @@ permalink : /wiki/
 
 # RDP
 * [RDP over ssh tunnel]({% post_url 2022-06-12-rdp_over_ssh_tunnel %})
+
+# tmux 
+* [tmux setting]({% post_url 2023-02-12-tmux_setting %})
