@@ -2,7 +2,7 @@
 layout: single
 title: tmux setting
 date : 2023-02-12 01:23:45 +0900
-last_modified_at: 2023-02-12 23:00:45 +0900
+last_modified_at: 2023-02-18 00:03:46 +0900
 categories: [tmux]
 tags: [tmux]
 comments: true
@@ -69,27 +69,32 @@ move-window -r
 하나의 윈도우는 여러개의 pane으로 구성될 수 있다.
 ```
 ctrl+b,”       //pane을 가로로 분할
-
 ctrl+b,%       //pane을 세로로 분할
-
 ctrl+b,q       //pane 번호를 보여주어  숫자로 이동할 수 있다
-
 ctrl+b, o      //다음 pane 선택
-
 ctrl+b, <방향키>  //다음 키로 pane 선택
-
 ctrl+d          //pane 종료
-
 ctrl+b,: command  //커맨드 입력
 ```
 
 # 기타
-set -g mouse on 을 하면 마우스 동작이 된다. 그런데 복사하기 붙여넣기를 할 경우 shift 키를 눌러줘야 한다.  
-set -g mouseo on을 하지 않으면 복사 모드 실행을 위해서는 ctrl+b [를 눌어주어야 한다.
+set -g mouse on을 한 상태에서 마우스 스크롤을 하면 copy mode 동작이 된다. 
+copy mode는 ctrl+b [를 눌러 진입할 수 있다.
+이 상태에서 system clipboard를 이용하여 복사하기/붙여넣기를 하려면 shift 키를 누르고 마우스로 영역을 선택하여 복사하기/붙여넣기를 한다.  
 ```
 ctrl+b,[        //copy mode, 마우스 스크롤 후, shift 키를 눌러 영역 선택/복사
 [ESC],q         //copy mode에서 빠져나오기
 ```
+
+system clipboard를 사용하지 않고, tmux buffer를 이용하여 복사하기/붙여넣기를 할 수 있다.
+```
+ctrl+b,[        //copy mode, 마우스 스크롤 또는 copy-mode-vi키 모드를 설정한 경우 vi command로 영역 설정을 할 수 있다.
+[ESC],q         //copy mode에서 빠져나오기
+ctrl+b,]        //copy mode, tmux buffer의 내용을 붙여넣기 한다.
+```
+tmux buffer는 system clipboard와는 별개의 것이어서, tmux buffer를 tmux 외부에서 실행된 어플리케이션에 붙여넣기 하려면 system clipboard로 옮겨주도록 설정을 하여야 하며, xclip를 이용하여 해당 기능을 설정할 수 있다.(아래 설정 파일 참고)
+
+
 <br/>
 ## 기본 설정 파일
 ~/.tmux.conf
@@ -109,6 +114,9 @@ bind-key -n MouseDrag1Status swap-window -d -t=                        //status 
 bind c new-window -c "#{pane_current_path}"                    /*윈도우를 생성하면서 경로를 현재 경로로 지정*/
 bind '"' split-window -c "#{pane_current_path}"
 bind % split-window -h -c "#{pane_current_path}"
+
+bind-key -T copy-mode-vi v send-keys -X begin-selection                // 복사할 영역 지정
+bind-key -T copy-mode-vi y send-keys -X copy-pipe "xclip -i -sel clip" // tmux buffer에 복사 후, system clipboard로 복사
 
 #:new-window -a                  //현재 윈도우의 다음 인덱스로 새로운 윈도우를 생성.
 #move-window -a -t 3             //현재 윈도우를 인덱스 3의 다음인덱스(4)로 이동. -a는 after의 의미
