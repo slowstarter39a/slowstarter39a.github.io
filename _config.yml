@@ -19,9 +19,9 @@ locale                   : "en-US"
 title                    : Embedded system study
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "slowstarter80"
+name                     : "slowstarter39a"
 description              : "Embedded system study"
-url: "https://slowstarter80.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://slowstarter39a.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
@@ -32,7 +32,7 @@ words_per_minute         : 200
 comments:
   provider               : "disqus" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
   disqus:
-    shortname            : "slowstarter80" # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+    shortname            : "slowstarter39a" # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
     server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
@@ -105,11 +105,11 @@ analytics:
     anonymize_ip         : # true, false (default)
 
 twitter_username:
-github_username:  slowstarter80
+github_username:  slowstarter39a
 
 # Site Author
 author:
-  name             : "slowstarter80"
+  name             : "slowstarter39a"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "You will never know until you try."
   location         : "South Korea"
@@ -117,7 +117,7 @@ author:
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: mailto:slowstarter80@daum.net
+      url: mailto:slowstarter39a@daum.net
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -129,7 +129,7 @@ author:
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/slowstarter80"
+      url: "https://github.com/slowstarter39a"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
@@ -145,7 +145,7 @@ footer:
       # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/slowstarter80"
+      url: "https://github.com/slowstarter39a"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
