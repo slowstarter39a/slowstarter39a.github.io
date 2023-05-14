@@ -2,7 +2,7 @@
 layout: single
 title: tmux setting
 date : 2023-02-12 01:23:45 +0900
-last_modified_at: 2023-02-18 00:03:46 +0900
+last_modified_at: 2023-06-14 22:18:22 +0900
 categories: [tmux]
 tags: [tmux]
 comments: true
@@ -51,6 +51,7 @@ ctrl+b, 0-9   //윈도우를 번호로 선택
 ctrl+b,f      //윈도우를 이름으로 선택
 ctrl_b,: move-window [-s src-window] [-t  dst-window]  //다른 세션으로 옮기기 -t dst-session:dst-window 으로 지정 가능
 ctrl+b,: swap-window [-s src-window] [-t dst-window]   // 세션 swap
+ctrl+b,: clear-history  // history clear
 ```
 
 ## window base-index 변경 방법
@@ -104,23 +105,23 @@ set -g mouse on
 set -g base-index 1
 set-option -g mode-keys vi
 setw -g pane-base-index 1
-set -g history-limit 999999                                            //scroll limit 설정
-set-window-option -g window-status-current-style fg=white,bg=red       //현재 윈도우 컬러
-set-window-option -ga window-status-activity-style fg=blue,bg=white    //활성 윈도우 컬러
-set -g monitor-activity on                                             //활성 윈도우 모니터
-bind-key -n MouseDrag1Status swap-window -d -t=                        //status bar 마우스 드래그로 윈도우 이동
+set -g history-limit 999999                                            #scroll limit 설정
+set-window-option -g window-status-current-style fg=white,bg=red       #현재 윈도우 컬러
+set-window-option -ga window-status-activity-style fg=blue,bg=white    #활성 윈도우 컬러
+set -g monitor-activity on                                             #활성 윈도우 모니터
+bind-key -n MouseDrag1Status swap-window -d -t=                        #status bar 마우스 드래그로 윈도우 이동
 
-/*윈도우를 생성하면서 경로를 현재 경로로 지정*/
-bind c new-window -c "#{pane_current_path}"                    /*윈도우를 생성하면서 경로를 현재 경로로 지정*/
+#윈도우를 생성하면서 경로를 현재 경로로 지정
+bind c new-window -c "#{pane_current_path}"                    #윈도우를 생성하면서 경로를 현재 경로로 지정
 bind '"' split-window -c "#{pane_current_path}"
 bind % split-window -h -c "#{pane_current_path}"
 
-bind-key -T copy-mode-vi v send-keys -X begin-selection                // 복사할 영역 지정
-bind-key -T copy-mode-vi y send-keys -X copy-pipe "xclip -i -sel clip" // tmux buffer에 복사 후, system clipboard로 복사
+bind-key -T copy-mode-vi v send-keys -X begin-selection                # 복사할 영역 지정
+bind-key -T copy-mode-vi y send-keys -X copy-pipe "xclip -i -sel clip" # tmux buffer에 복사 후, system clipboard로 복사
 
-#:new-window -a                  //현재 윈도우의 다음 인덱스로 새로운 윈도우를 생성.
-#move-window -a -t 3             //현재 윈도우를 인덱스 3의 다음인덱스(4)로 이동. -a는 after의 의미
-#move-window -b -t 3             //현재 윈도우를 인덱스 3의 이전인덱스(2)로 이동. -b는 before의 의미
+#:new-window -a                  #현재 윈도우의 다음 인덱스로 새로운 윈도우를 생성.
+#move-window -a -t 3             #현재 윈도우를 인덱스 3의 다음인덱스(4)로 이동. -a는 after의 의미
+#move-window -b -t 3             #현재 윈도우를 인덱스 3의 이전인덱스(2)로 이동. -b는 before의 의미
 
 ```
 
