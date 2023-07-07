@@ -2,7 +2,7 @@
 layout: single
 title: tmux setting
 date : 2023-02-12 01:23:45 +0900
-last_modified_at: 2023-06-14 22:18:22 +0900
+last_modified_at: 2023-07-08 07:52:44 +0900
 categories: [tmux]
 tags: [tmux]
 comments: true
@@ -115,6 +115,7 @@ bind-key -n MouseDrag1Status swap-window -d -t=                        #status b
 bind c new-window -c "#{pane_current_path}"                    #윈도우를 생성하면서 경로를 현재 경로로 지정
 bind '"' split-window -c "#{pane_current_path}"
 bind % split-window -h -c "#{pane_current_path}"
+bind-key y set-window-option synchronize-panes
 
 bind-key -T copy-mode-vi v send-keys -X begin-selection                # 복사할 영역 지정
 bind-key -T copy-mode-vi y send-keys -X copy-pipe "xclip -i -sel clip" # tmux buffer에 복사 후, system clipboard로 복사
