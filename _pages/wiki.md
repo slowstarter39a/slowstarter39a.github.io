@@ -1,7 +1,7 @@
 ---
 layout  : single
 title   : wiki
-last_modified_at : 2023-02-12 23:03:21 +0900
+last_modified_at : 2023-08-26 17:58:03 +0900
 tags    : index
 toc     : true
 public  : true
@@ -34,6 +34,9 @@ permalink : /wiki/
 * [Race condition]({% post_url 2020-07-15-race_condition %})
 * [Ways of using standard input/output in c/c++]({% post_url 2021-01-09-ways_of_using_standard_input_output_in_c_cpp %})
 * [Ways of calling a function in c/c++]({% post_url 2021-01-11-ways_of_calling_a_function_in_c_cpp %})
+
+# Rust
+* [여러개의 숫자 입력 받기]({% post_url 2023-08-26-rust_get_multiple_numbers %})
 
 # shell programming
 * [shell programming]({% post_url 2020-06-05-shell_programming %})
